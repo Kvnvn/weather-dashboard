@@ -1,0 +1,9 @@
+
+.col-sm-4{
+    float: left; }
+.col-sm-8{float: right;}
+.jumbotron-fluid{
+    padding-bottom: 6px;padding-top: 6px;background-color: #1d2124;}
+.display-4{
+    text-align: center;color: white;}
+
