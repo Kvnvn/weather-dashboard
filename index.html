@@ -6,9 +6,9 @@
     <!---Bootstrap link-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-   <!--Icon CSS-->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <!---styles css link-->
+    <!--Icon CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!---styles css link-->
     <link rel="stylesheet" href="styles.css">
     <title>Weather Dashboard</title>
 </head>
@@ -19,33 +19,52 @@
     </div>
 </div>
 <!---- Search bar area -->
+
 <body>
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-               <h1>Search for city</h1>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="SearchCity">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button"> <i class="fa fa-search"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <!---Weatherforecast area -->
-                    <div class="col-sm-8">
-                        Current Weather forcast:
-                        5 day Forcast:
+                <h1>Search for City:</h1>
+                <div class="input-group mb-3">
+                    <!---create html for search form-->
+                    <!---create html for last recent search history from local-->
+                    <!---create html for current weather-->
+                    <input type="text" class="form-control" id="searchUserInput" placeholder="SearchCity">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" id="searchBtn" type="button"> <i
+                                class="fa fa-search"></i></button>
                     </div>
                 </div>
+                <!----add each button in list to go back into history searches-->
+                <!--when button clicked it should take you back to weather report-->
+                <!----clear data once finished-->
+                <section class="container">
+                    <div class="list-group">
+                        <div>
+                            <button type="button" class="list-group-item list-group-item-action">Austin</button>
+                            <button type="button" class="list-group-item list-group-item-action">Chicago</button>
+                            <button type="button" class="list-group-item list-group-item-action">New York</button>
+                            <button type="button" class="list-group-item list-group-item-action">Orlando</button>
+                            <button type="button" class="list-group-item list-group-item-action">San Francisco</button>
+                            <button type="button" class="list-group-item list-group-item-action">Seattle</button>
+                            <button type="button" class="list-group-item list-group-item-action">Denver</button>
+                            <button type="button" class="list-group-item list-group-item-action">Atlanta</button>
+                        </div>
+                </section>
             </div>
-        </div>
+            <!--CURRENT WEATHER-->
 
+           
+    <!---<pre id = "currentWeather"></pre--->
+
+    <pre id="currentWeather"></pre>
+    <!--JQUERY link-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--Moment.js Link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!--External JS -->
+    <script src="./script.js"></script>
 </body>
- <!--JQUERY link-->
- <script src="https://code.jquery.com/jquery-3.4.1.min.js"
- integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<!--Moment.js Link-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<!--External JS -->
-<script src="script.js"></script>
+
 </html>
