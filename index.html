@@ -13,15 +13,16 @@
     <title>Weather Dashboard</title>
 
 </head>
-<!---top header-->
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h1 class="display-4">Weather Dashboard</h1>
-    </div>
-</div>
-<!---- Search bar area -->
 
 <body>
+    <!---top header-->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Weather Dashboard</h1>
+        </div>
+    </div>
+
+    <!---- Search bar area -->
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
@@ -36,108 +37,100 @@
                                 class="fa fa-search"></i></button>
                     </div>
                 </div>
-                <!----added in listgroup button to show recent history searches-->
+                <!----added in list group button to show recent history searches-->
                 <!----when button is clicked it refers back to previous history of searched item-->
                 <section class="container">
                     <div class="list-group">
-                        <div>
-                            <button type="button" class="list-group-item list-group-item-action">Austin</button>
-                            <button type="button" class="list-group-item list-group-item-action">Chicago</button>
-                            <button type="button" class="list-group-item list-group-item-action">New York</button>
-                            <button type="button" class="list-group-item list-group-item-action">Orlando</button>
-                            <button type="button" class="list-group-item list-group-item-action">San Francisco</button>
-                            <button type="button" class="list-group-item list-group-item-action">Seattle</button>
-                            <button type="button" class="list-group-item list-group-item-action">Denver</button>
-                            <button type="button" class="list-group-item list-group-item-action">Atlanta</button>
-                        </div>
+                        <button type="button" class="list-group-item list-group-item-action">Austin</button>
+                        <button type="button" class="list-group-item list-group-item-action">Chicago</button>
+                        <button type="button" class="list-group-item list-group-item-action">New York</button>
+                        <button type="button" class="list-group-item list-group-item-action">Orlando</button>
+                        <button type="button" class="list-group-item list-group-item-action">San Francisco</button>
+                        <button type="button" class="list-group-item list-group-item-action">Seattle</button>
+                        <button type="button" class="list-group-item list-group-item-action">Denver</button>
+                        <button type="button" class="list-group-item list-group-item-action">Atlanta</button>
+                    </div>
                 </section>
             </div>
-        </div>
-        <div class="col-sm-8">
-            <section class="container mt-3">
+            <div class="col-sm-8">
+                <section class="container mt-3">
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="card">
+                                <div class="card-body" id="weather-body">
+                                    <!-- <p class="text"><span class="badge badge-warning"></span></p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <div class="row">
                     <div class="col-sm">
-                        <div class="card">
+                        <h2 class="h4">5-Day Forecast </h2>
+                        <div class="card text-white bg-primary">
                             <div class="card-body">
-                                <h2 class="card-title h3">
-                                    <img></img>
-                                </h2>
-                                <p class="text"></p>
-                                <p class="text"></p>
-                                <p class="text"></p>
-                                <p class="text"><span class="badge badge-warning"></span></p>
+                                <h5 class="card-title">3/23/2020</h5>
+                                <div class="card-title"><img class="weather-icon"
+                                        src=http://openweathermap.org/img/wn/01d@2x.png></div>
+                                <p class="card-text">temp: 86.85&#8457; </p>
+                                <p>humidity: 43%</p>
+                            </div>
+                        </div>
+                        <div class="card text-white bg-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">3/24/2020</h5>
+                                <div class="card-title"><img class="weather-icon"
+                                        src=http://openweathermap.org/img/wn/02d@2x.png></div>
+                                <p class="card-text">temp: 70.00&#8457; </p>
+                                <p>humidity: 20%</p>
+                            </div>
+
+                        </div>
+                        <div class="card text-white bg-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">3/25/2020</h5>
+                                <div class="card-title"><img class="weather-icon"
+                                        src=http://openweathermap.org/img/wn/03d@2x.png></div>
+                                <p class="card-text"> temp: 60.00&#8457; </p>
+                                <p>humidity: 10%</p>
+                            </div>
+                        </div>
+                        <div class="card text-white bg-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">3/26/2020</h5>
+                                <div class="card-title"><img class="weather-icon"
+                                        src=http://openweathermap.org/img/wn/04d@2x.png></div>
+                                <p class="card-text"> temp: 50.85&#8457; </p>
+                                <p>humidity: 10%</p>
+                            </div>
+                        </div>
+                        <div class="card text-white bg-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">3/27/2020</h5>
+                                <div class="card-title"><img class="weather-icon"
+                                        src=http://openweathermap.org/img/wn/01d@2x.png></div>
+                                <p class="card-text"> temp: 86.85&#8457; </p>
+                                <p>humidity: 43%</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <div class="row">
-                <div class="col-sm">
-                    <h2 class="h4">5-Day Forecast </h2>
-                    <div class="card text-white bg-primary">
-                        <div class="card-body">
-                            <h5 class="card-title">3/23/2020</h5>
-                            <div class="card-title"><img class="weather-icon"
-                                    src=http://openweathermap.org/img/wn/01d@2x.png></div>
-                            <p class="card-text">temp: 86.85&#8457; </p>
-                            <p>humidity: 43%</p>
-                        </div>
-                    </div>
-                    <div class="card text-white bg-primary">
-                        <div class="card-body">
-                            <h5 class="card-title">3/24/2020</h5>
-                            <div class="card-title"><img class="weather-icon"
-                                    src=http://openweathermap.org/img/wn/02d@2x.png></div>
-                            <p class="card-text">temp: 70.00&#8457; </p>
-                            <p>humidity: 20%</p>
-                        </div>
-
-                    </div>
-                    <div class="card text-white bg-primary">
-                        <div class="card-body">
-                            <h5 class="card-title">3/25/2020</h5>
-                            <div class="card-title"><img class="weather-icon"
-                                    src=http://openweathermap.org/img/wn/03d@2x.png></div>
-                            <p class="card-text"> temp: 60.00&#8457; </p>
-                            <p>humidity: 10%</p>
-                        </div>
-                    </div>
-                    <div class="card text-white bg-primary">
-                        <div class="card-body">
-                            <h5 class="card-title">3/26/2020</h5>
-                            <div class="card-title"><img class="weather-icon"
-                                    src=http://openweathermap.org/img/wn/04d@2x.png></div>
-                            <p class="card-text"> temp: 50.85&#8457; </p>
-                            <p>humidity: 10%</p>
-                        </div>
-                    </div>
-                    <div class="card text-white bg-primary">
-                        <div class="card-body">
-                            <h5 class="card-title">3/27/2020</h5>
-                            <div class="card-title"><img class="weather-icon"
-                                    src=http://openweathermap.org/img/wn/01d@2x.png></div>
-                            <p class="card-text"> temp: 86.85&#8457; </p>
-                            <p>humidity: 43%</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-        <!--CURRENT WEATHER-->
-        <!--added in card title with placeholders for now before-->
-        <!---when the search button is clicked it should take the city and show results of the cities name, temp, humidity, wind speed,and uv index-->
-        <!----5 Day FOrecast-->
-        <!---in forecast it should show icon, temp and humidity within the span of 5 days-->
-        <!---includes dates of 5 days-->
+    </div>
+    <!--CURRENT WEATHER-->
+    <!--added in card title with placeholders for now before-->
+    <!---when the search button is clicked it should take the city and show results of the cities name, temp, humidity, wind speed,and uv index-->
+    <!----5 Day FOrecast-->
+    <!---in forecast it should show icon, temp and humidity within the span of 5 days-->
+    <!---includes dates of 5 days-->
 
-        <!---section class="container mt-3"--->
-        <!--JQUERY link-->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <!--Moment.js Link-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <!--External JS -->
-        <script src="./script.js"></script>
+    <!---section class="container mt-3"--->
+    <!--JQUERY link-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--External JS -->
+    <script src="./script.js"></script>
 </body>
 
 </html>

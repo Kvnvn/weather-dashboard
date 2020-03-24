@@ -5,14 +5,27 @@
     .display-4{
         text-align: center;color: white;}
 /* Aside column area */
-.row{margin-left: -12px; height: 226px;}
+/* .row{margin-left: -12px; height: 226px;}
 .col-sm-4{
     float: left; max-width: 246.56; }
 h1{font-size: 1.5rem;}
 
 /*  MAIN Content */
-.col-sm-8{float: right;margin-left: 55px;}
+/* .col-sm-8{float: right;margin-left: 55px;}
 
-/*  */
-.card{margin-top: 10px;}
+ */
+/* .card{margin-top: 10px;}
 .card-body{padding: 0.25rem;}
+
+x
+.weather-icon {
+    height: 4rem;
+}
+
+.forecast .weather-icon {
+    height: 3.5rem;
+}
+
+.forecast {
+    min-width: 12rem;
+}  */
