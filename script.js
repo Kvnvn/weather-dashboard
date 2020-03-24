@@ -50,57 +50,65 @@ function dumpCurrentWeather(cities) {
 //         currentWeatherView.text(JSON.stringify(response, null, 2));
 //     });  
 // }
+function dump5DayForecastData(forecastCities){
+    // var location = {lon: -118.97, lat: 37.65};
+    var queryURL="https://api.openweathermap.org/data/2.5/forecast?" +"q=" + forecastCities + "&" +     apiKeyParam;
+    
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        // currentWeatherView.text(JSON.stringify(response, null, 2));
+        
+        var fiveDayArray = [];
+        
+     //var offsetSeconds = response.city.timezone;
 
-// function dump5DayForecastData(){
-//     // var location = {lon: -118.97, lat: 37.65};
-//     var queryURL=
-//     "https://api.openweathermap.org/data/2.5/forecast?" +
-//      "q=" + 
-//      searchCities +
-//     "&" + 
-//     apiKeyParam;
+         response.list.forEach(function(forecastListItem){
+        // var seconds= forecastListItem.dt + offsetSeconds
+        // var hours = seconds/3600
+       // var hour = hours % 24
+       //  if (hour>12 && hour <=15){}
+       var newDivCard = $("<div>").attr("class", "card text-white bg-primary");
+       var newCardBody = $("<div>");
+       newCardBody.attr("class", "card-body");
+       newCardBody.attr("id", "forecastBody");
 
-//     $.ajax({
-//         url: queryURL,
-//         method: "GET"
-//     }).then(function (response) {
-//         currentWeatherView.text(JSON.stringify(response, null, 2));
+         var forecastData={
+             temperature: forecastListItem.main.temp,
+            humidityPercent:forecastListItem.main.humidity,
+            //iconUrl: getWeatherIconUrlFromId(forecastListItem.weather[0].icon)
+         };
+
+         var forecastTemp = $("<p>").text("Temperature: " + (((forecastData.temperature- 273.15) *(9 / 5 ) + 32 ).toFixed(2)) + " F");
+         var forecastHumidity = $("<p>").text("Humidity: " + forecastData.humidityPercent);
+        
+           newCardBody.empty();
+           newCardBody.append(forecastTemp,forecastHumidity);
+           //append card body to div
+           newDivCard.append(newCardBody);
+           //push to array
+           fiveDayArray.push(newDivCard);
+      $(".forecastWrapper").append(fiveDayArray);
+        });
+     });  
+     
+    }
+    
+    //icon for weather id 
+    // function getWeatherIconUrlFromId(iconId){
+        //     return "http://openweathermap.org/img/wn" + iconId + "@2x.png";
+        // }
+        
+        // dumpUvData();
+        // dumpCurrentWeather();
         
         
-//         var offsetSeconds = response.city.timezone;
-//         var FiveDayForecastData =[];
-
-//         response.list.forEach(function(forecastListItem){
-//         var seconds= forecastListItem.dt + offsetSeconds
-//         var hours = seconds/3600
-//         var hour = hours % 24
-//         if (hour>12 && hour <=15)
-//         var forecastData={
-//             unixTime:forecastListItem.dt,
-//             temperature: forecastListItem.main.temp,
-//             humidityPercent:forecastListItem.main.humidity,
-//             iconUrl: getWeatherIconUrlFromId(forecastListItem.weather[0].icon)
-//         };
-//         FiveDayForecastData.push(forecastData)
-//         });
-//     });  
-    
-// }
-
-//icon for weather id 
-// function getWeatherIconUrlFromId(iconId){
-//     return "http://openweathermap.org/img/wn" + iconId + "@2x.png";
-// }
-
-// dumpUvData();
-// dumpCurrentWeather();
-// dump5DayForecastData();
-
-
-// when user clicks on the search button
-$("#searchBtn").on("click", function (event) {
-    event.preventDefault();
-    var searchCities = $("#searchUserInput").val().trim();
-    
-    dumpCurrentWeather(searchCities);
-});
+        // when user clicks on the search button
+        $("#searchBtn").on("click", function (event) {
+            event.preventDefault();
+            var searchCities = $("#searchUserInput").val().trim();
+            
+            dumpCurrentWeather(searchCities);
+            dump5DayForecastData(searchCities);
+        });
