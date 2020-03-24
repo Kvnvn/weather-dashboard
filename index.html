@@ -11,6 +11,19 @@
     <!---styles css link-->
     <link rel="stylesheet" href="styles.css">
     <title>Weather Dashboard</title>
+    <style>
+        .weather-icon {
+            height: 4rem;
+        }
+
+        .forecast .weather-icon {
+            height: 3.5rem;
+        }
+
+        .forecast {
+            min-width: 12rem;
+        }
+    </style>
 </head>
 <!---top header-->
 <div class="jumbotron jumbotron-fluid">
@@ -35,9 +48,8 @@
                                 class="fa fa-search"></i></button>
                     </div>
                 </div>
-                <!----add each button in list to go back into history searches-->
-                <!--when button clicked it should take you back to weather report-->
-                <!----clear data once done -->
+                <!----added in listgroup button to show recent history searches-->
+                <!----when button is clicked it refers back to previous history of searched item-->
                 <section class="container">
                     <div class="list-group">
                         <div>
@@ -53,15 +65,15 @@
                 </section>
             </div>
             <!--CURRENT WEATHER-->
-<!---added in placeholders in the mean time before it runs-->
-<!---when searched temp, humidity, wind speed, and uv index should pop up for certain location-->
+            <!--added in card title with placeholders for now before-->
+            <!---when the search button is clicked it should take the city and show results of the cities name, temp, humidity, wind speed,and uv index-->
             <div class="col-sm-8">
-                <section class="container mt-3">
-                    <div class="row">
-                        <div class="card">
+            <section class="container mt-3">
+                <!--div class="row"--->
+                    <div class="card">
                             <div class="card-body">
                                 <h2 class="card-title h3">Atlanta (8/15/2019)<img class="weather-icon"
-                                        src="http://openweathermap.org/img/wn/13d@2x.png">
+                                        src="http://openweathermap.org/img/wn/01d@2x.png">
                                 </h2>
                                 <p class="text">Temperature:90.9 &#8457;</p>
                                 <p class="text">Humidity: 45%;</p>
@@ -69,18 +81,86 @@
                                 <p class="text">Uv Index:<span class="badge badge-warning">9.49</span></p>
                             </div>
                         </div>
-                        <!---5dayforecast-->
-           
-    <!---<pre id = "currentWeather"></pre--->
 
-    <pre id="currentWeather"></pre>
-    <!--JQUERY link-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <!--Moment.js Link-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <!--External JS -->
-    <script src="./script.js"></script>
+                        <!----5 Day FOrecast-->
+                        <!---in forecast it should show icon, temp and humidity within the span of 5 days-->
+                        <!---includes dates of 5 days-->
+
+                        <!---section class="container mt-3"--->
+                            <div class="col">
+                                <h2 class="h4">5-Day Forecast</h2>
+                                <div class="row">
+                                    <div class="card text-white bg-primary">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3/23/2020</h5>
+                                            <div class="card-title"><img class = "weather-icon" src=http://openweathermap.org/img/wn/01d@2x.png></div>
+                                                <p class="card-text">
+                                                temp: 86.85&#8457;
+                                            </p>
+                                            <p>humidity: 43%</p>
+                                        </div>
+                                    </div>
+                                <div class="card text-white bg-primary">
+                                    <div class="card-body">
+                                        <h5 class="card-title">3/24/2020</h5>
+                                        <div class="card-title"><img class = "weather-icon" src=http://openweathermap.org/img/wn/02d@2x.png></div>
+                                            <p class="card-text">
+                                            temp: 70.00&#8457;
+                                        </p>
+                                        <p>humidity: 20%</p>
+                                    </div>
+
+                                </div>
+                                <div class="card text-white bg-primary">
+                                    <div class="card-body">
+                                        <h5 class="card-title">3/25/2020</h5>
+                                        <div class="card-title"><img class = "weather-icon" src=http://openweathermap.org/img/wn/03d@2x.png></div>
+                                            <p class="card-text"> 
+                                            temp: 60.00&#8457;
+                                        </p>
+                                        <p>humidity: 10%</p>
+                                    </div>
+
+                                </div>
+                                <div class="card text-white bg-primary">
+                                    <div class="card-body">
+                                        <h5 class="card-title">3/26/2020</h5>
+                                        <div class="card-title"><img class = "weather-icon" src=http://openweathermap.org/img/wn/04d@2x.png></div>
+                                            <p class="card-text">
+                                            temp: 50.85&#8457;
+                                        </p>
+                                           <p>humidity: 10%</p>
+                                    </div>
+                                </div>
+                                <div class="card text-white bg-primary">
+                                    <div class="card-body">
+                                        <h5 class="card-title">3/27/2020</h5>
+                                        <div class="card-title"><img class = "weather-icon" src=http://openweathermap.org/img/wn/01d@2x.png></div>
+                                            <p class="card-text">
+                                                temp: 86.85&#8457;
+                                                
+                                                <!---img class = "weather-icon" src=http://openweathermap.org/img/wn/01d@2x.png--->
+                                            
+                                        </p>
+                                        <p>humidity: 43%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <!---end row-->
+                </section>
+            </div>
+            <!---<pre id = "currentWeather"></pre--->
+
+            <pre id="currentWeather"></pre>
+            <!--JQUERY link-->
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+            <!--Moment.js Link-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+            <!--External JS -->
+            <script src="./script.js"></script>
 </body>
 
 </html>
